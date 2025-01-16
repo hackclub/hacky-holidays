@@ -1,0 +1,110 @@
+# Hacky Holidays Guide
+
+Hacky Holidays is a limited-time YSWS event for making your own PCB tree decorations! There are **3** major steps in making a successful decoration:
+
+1. Choosing your Parts
+2. Designing your PCB
+3. Programming your PCB
+
+**** This guide serves as a learning tool to help you get started, If you submit the guide PCB you will not be accepted! ****
+
+---
+
+# Choosing Your Parts
+
+When choosing your parts, think about the function of each component, and try to wither out unneeded components. Unneeded components can reduce your decoration’s battery life!
+
+Parts covered in the guide**:**
+
+- Neopixels (4 pin)
+- Xiao ESP32C3
+- Battery Holder
+- resistors/diodes
+
+If you want to add any components **not** on the approved list, ask one of the organizers in #hacky-holidays!
+
+---
+
+# **Designing your PCB**
+
+For this guide, we are going to be using KiCad, so if you are using a different tool your steps might be a bit different! 
+
+First, open up KiCad, and go to File → New Project… and name it whatever you want! Just make sure you name it something you remember so you can come back to it!
+
+![image.png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/7guide1.png)
+
+Then Click on the **Schematic Editor** Button. It will take you to a blank page where you will start designing your PCB!
+
+![image (3).png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/4guide2.png)
+
+### Importing Footprints
+
+The first thing we’ll need to do is import the Xiao ESP32C3 into KiCad. First, download [this file](https://github.com/Seeed-Studio/OPL_Kicad_Library/blob/master/Seeed%20Studio%20XIAO%20Series%20Library/XIAO-ESP32S3-SMD.kicad_mod), and drag it into your project folder. Go to your KiCad project menu, and open up the footprint editor. Click `File → Import → Footprint`, and select the Xiao ESP32C3. Save it using `ctrl + S`. It’ll ask you to select a library to put it in, click new library and name it something like xiao(.pretty).
+
+Next, download [this file](https://github.com/Seeed-Studio/OPL_Kicad_Library/blob/master/Seeed%20Studio%20XIAO%20Series%20Library/Seeed_Studio_XIAO_Series.kicad_sym), and put it in your .pretty folder. Open up the schematic editor, click Preferences→ Manage Symbol Libraries → Add Existing Library to Table(Folder Icon) → File you just downloaded.
+
+Once you are in, press the A key on your keyboard. This should open up a menu where you can add add components. Search for the following and add them to your schematic:
+
+- XIAO-ESP32-C3-SMD (x1)
+- WS2813B (x6)
+- Battery Cell (x2)
+- Diode (x2)
+
+### Note on LEDs:
+
+We are using daisy-chainable neopixels. This means that we can link all of the LEDs in series, and then control all of them through a PWM signal from our board. This helps us save a lot on pins and allow for the addition of more LEDs!
+
+![image.png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/3guide3.png)
+
+Now that we have all of our components on our schematic, it should look something like this:
+
+![image.png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/2guide4.png)
+
+Now press **W** on your keyboard, which will allow you to wire your PCB! Click on the pins and move your mouse to wire your components together. Connect your components as follows in the schematic:
+
+LEDS:
+
+![image.png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/6guide5.png)
+
+XIAO:
+
+![image.png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/1guide6.png)
+
+Battery:
+
+![image.png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/5guide7.png)
+
+Regulator and Charger(Optional):
+
+![image.png](https://cloud-fsydsjrv2-hack-club-bot.vercel.app/0guide8.png)
+
+Now that we are done **wiring** up the PCB, we can start **designing & routing** it! 
+
+---
+
+# **Programming your PCB**
+
+To program your PCB, use the Arduino IDE and the Neopixels library! Here is a helpful resource to help you get started:
+
+https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use
+
+To simulate your code, you can use [Wokwi](https://wokwi.com/projects/new/esp32-c3)
+
+# Submissions & Manufacturing
+
+Once you are ready to submit, create a PR in **OnBoard** with the Hacky-Holidays tag and submit your PR to this form!
+
+PRs must include multiple things:
+
+1. Schematic of your Board
+2. Link to Wokwi with the board working
+
+Once your PR gets approved and you are ready to order, we will order the PCB for you and ship it to your address!
+
+---
+
+EXT.
+
+[General Info](https://www.notion.so/General-Info-153a1dc89099809d86c0fda32bbf66a9?pvs=21)
+
+[How to wire up your LEDs](https://www.notion.so/How-to-wire-up-your-LEDs-154a1dc890998077b10aecd282861452?pvs=21)
