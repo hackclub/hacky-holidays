@@ -13,33 +13,40 @@
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.2.4",
+		"@eslint/compat": "^1.4.1",
 		"@sveltejs/adapter-cloudflare": "^4.9.0",
-		"@sveltejs/kit": "^2.15.1",
+		"@sveltejs/kit": "^2.49.1",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
-		"autoprefixer": "^10.4.20",
-		"eslint": "^9.17.0",
-		"eslint-config-prettier": "^9.1.0",
+		"autoprefixer": "^10.4.22",
+		"eslint": "^9.39.1",
+		"eslint-config-prettier": "^9.1.2",
 		"eslint-plugin-svelte": "^2.46.1",
-		"globals": "^15.14.0",
+		"globals": "^15.15.0",
 		"mdsvex": "^0.11.2",
-		"prettier": "^3.4.2",
-		"prettier-plugin-svelte": "^3.3.2",
-		"prettier-plugin-tailwindcss": "^0.6.9",
-		"svelte": "^5.16.1",
-		"svelte-check": "^4.1.1",
-		"tailwindcss": "^3.4.17",
-		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.19.0",
-		"vite": "^5.4.11"
+		"prettier": "^3.7.4",
+		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-tailwindcss": "^0.6.14",
+		"svelte": "^5.45.5",
+		"svelte-check": "^4.3.4",
+		"tailwindcss": "^3.4.18",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.48.1",
+		"vite": "^5.4.21"
 	},
 	"dependencies": {
-		"@tailwindcss/typography": "^0.5.15",
+		"@tailwindcss/typography": "^0.5.19",
 		"@threlte/core": "8.0.0-next.39",
 		"@threlte/extras": "9.0.0-next.51",
 		"@threlte/gltf": "3.0.0-next.11",
 		"@types/three": "^0.171.0",
 		"svelte-routing": "^2.13.0",
 		"three": "^0.172.0"
+	},
+	"pnpm": {
+		"overrides": {
+			"esbuild": ">=0.25.0",
+			"cookie": ">=0.7.0",
+			"three@<0.125.0": ">=0.125.0"
+		}
 	}
 }
