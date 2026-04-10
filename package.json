@@ -15,7 +15,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.4.1",
 		"@sveltejs/adapter-cloudflare": "^4.9.0",
-		"@sveltejs/kit": "^2.49.1",
+		"@sveltejs/kit": "^2.57.1",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"autoprefixer": "^10.4.22",
 		"eslint": "^9.39.1",
